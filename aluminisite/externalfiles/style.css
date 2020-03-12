@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    height: 80px;
+    line-height: 80px;
+    z-index: 90;
+    background-color: #7851a9;
+    box-shadow: 0.1px 0.02px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    padding: 0 20px;
+    color: #eee;
+}
+
+.logo h1{
+    z-index: 77;
+}
+
+.user_authentication h3{
+    text-align: center;
+    padding: 20px;
+}
+
+.user_authentication h3 a{
+    text-decoration: none;
+    color: #bbb;
+}
+
+.user_authentication h3 a i{padding: 0 10px 0 0;}
+
+.navigation-bar-div{
+    background-color: #7851a9;
+    z-index: 69;
+    position: fixed;
+    height: 100vh;
+    width: 300px;
+    box-shadow: 0.25px 0.1px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.menu{
+    position: absolute;
+    top: 100px;
+}
+
+#ckd{
+    display: none;
+}
+
+.nav_div{
+    display: block;
+    width: 300px;
+}
+
+.nav_li{
+    text-align: center;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.nav_li a{
+    text-decoration: none;
+    color: #bbb;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav_li:hover a, .user_authentication h3:hover a{
+    color: #ddd;
+    transition: 0.5s ease;
+}
+
+.new-btn-link{
+    text-align: center;
+    text-decoration: none;
+    color: #aaa;
+}
+
+.new-btn-link i{
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.new-btn-link p{font-size: 14px;}
+
+.blog_content_main_div{
+    position: relative;
+    width: calc(100vw - 300px);
+}
+
+.blog_subdiv{
+    position: absolute;
+    left: 300px;
+    width: calc(100% - 50px);
+    top: 100px;
+    display: block;
+    margin: 0 0 0 20px;
+}
+
+.induv_blog_div{
+    width: 100%;
+    margin: 7px 3px;
+    border-radius: 5px;
+    min-height: 50px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0.25px 0.1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.induv_blog_div a{
+    text-decoration: none;
+    color: #333;
+}
+
+.passed_out, .description, .salary{
+    margin: 5px 0;
+}
+
+.description{
+    font-size: 20px;
+}
+
+.passed_out, .salary{
+    font-size: 14px;
+}
+
+.newblogform label{
+    margin-right: 10px;
+}
+
+.newblogform p{
+    margin: 10px;
+}
+
+.newblogform select{
+    background-color: #fff;
+}
+
+.newblogform form p:nth-child(6) label{
+    display: block;
+    margin: 5px 0px;
+}
+
+.newblogform form p input[text]{
+    width: 300px;
+    padding: 10px;
+}
+
+.newblogform .submit_btn{
+    text-align: center;
+    padding: 10px 30px;
+    outline: none;
+    background-color: #7851a9;
+    border: none;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.newblogform form p textarea
+{
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.newblogform form p input,
+.newblogform form p select{
+    padding: 3px 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 0.5px solid #aaa;
+}
+
+.change_btn{
+    display: flex;
+}
+
+.change_btn .editdelete{
+    margin: 10px 20px;
+}
+
+.editdelete a h5 i{
+    padding: 0px 5px;
+}
+
+.deletewarning{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+.deletewarning a{
+    font-weight: 700;
+}
+
+.copyrights{
+    min-height: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.copyrights h3, .copyrights h5{
+    color: #eee;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px){
+    .ckd_label{
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 0px;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+    }
+    
+    .ckd_label i{
+        width: 30px;
+        height: 4px;
+        margin: 3px ;
+        background-color: #ddd;
+    }
+        
+    .blog_subdiv{
+        margin: 0 0 0 5px;
+    }
+    
+    .navigation-bar-div{
+        transform: translate(-100%);
+    }
+
+    #ckd:checked ~ .navigation-bar-div{
+        transform: translate(0);
+        transition: 0.8s ease-in-out;
+    }
+    
+    #ckd:checked ~ .ckd_label i:first-child{
+        transform: rotate(-45deg);
+        transition: 0.8s ease;
+    }
+
+    .blog_content_main_div{
+        position: relative;
+        width: 90vw;
+    }
+
+    .blog_subdiv{
+        width: 100%;
+        left: 0;
+        top: 130px;
+        display: block;
+        margin: 0 0 0 20px;
+    }
+
+    .navigation-bar-div{
+        width: 100vw;
+    }
+
+    .nav_div{
+        width: 100vw;
+    }
+        
+    .newblogform p{
+        margin: 10px 30px 10px 10px;
+    }
+
+}
+
+

@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/54fc2c8a18.js" crossorigin="anonymous"></script>
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h1>EEEA Alumini</h1>
+        </div>  
+    </div>
+    <div class="navigation-bar">
+        <label for="ckd" class="ckd_label">
+            <i class="hamburger_bar"></i>
+            <i class="hamburger_bar"></i>
+            <i class="hamburger_bar"></i>
+        </label>
+        <input type="checkbox" id="ckd">
+        <div class="navigation-bar-div">
+            <div class="menu">
+                <div class="nav_div">
+                    <ul class="nav_ul">
+                        <li class="nav_li"><a href="#">Option 1</a></li>
+                        <li class="nav_li"><a href="#">Option 2</a></li>
+                        <li class="nav_li"><a href="#">Option 3</a></li>
+                        <li class="nav_li"><a href="#">Option 4</a></li>
+                    </ul>
+                </div>
+                <div class="user_authentication">
+                    <h3>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i></i>Log Out</a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Log In</a>
+                        {% endif %}
+                    </h3>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="new-btn">
+                    <a href="{% url 'newblog' %}" class="new-btn-link">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>New Alumini</p>
+                    </a>
+                </div>    
+                {% endif %} 
+                <div class="copyrights">
+                    <h5>Built with Django<br/>Designed by,<br/>Umesh Balamurugan BE-EEE</h5>
+                    <h3>&copy EEEA Alumini Association</h3>
+                </div> 
+            </div>
+        </div>
+    </div>
+    {% block allblogs %}
+    {% endblock allblogs %}
+    {% block detailview %}
+    {% endblock detailview %}
+    {% block newblog %}
+    {% endblock newblog %}
+    {% block editblog %}
+    {% endblock editblog %}
+    {% block deleteblog %}
+    {% endblock deleteblog %}
+    {% block login %}
+    {% endblock login %}    
+</body>
+</html>

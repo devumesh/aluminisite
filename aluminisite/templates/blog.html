@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block allblogs %}
+    <div class="blog_content_main_div">
+        <div class="blog_subdiv">
+            {% for blog in blogs %}
+            <div class="induv_blog_div">
+                <a href="{% url 'detailed' blog.pk %}" class="induv_blog_link">
+                    <div class="blog_link_div">
+                        <h2 class="alumini">{{blog.alumini}}</h2>
+                        <h4 class="company">{{blog.company}}</h4>
+                        <p class="salary"><span>{{blog.salary}}</span> per annum</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock allblogs %}
+

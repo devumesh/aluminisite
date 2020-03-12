@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block detailview %}
+<div class="blog_content_main_div">
+    <div class="blog_subdiv">
+        <div class="induv_blog_div">
+            <a href="#" class="induv_blog_link">
+                <div class="blog_link_div">
+                    <h2 class="alumini">{{blog.alumini}}</h2>
+                    <h4 class="company">{{blog.company}}</h4>
+                    <p class="salary"><span>{{blog.salary}}</span> per annum</p>
+                    <p class="passed_out">Passed out in {{blog.passed_out_year}}</p>
+                    <p class="description">{{blog.description}}</p>
+                </div>
+            </a>
+            {% if user.is_authenticated %}
+            <div class="change_btn">
+                <div class="editdelete">
+                    <a href="{% url 'edit' blog.pk %}">                    
+                        <h5><i class="fas fa-edit"></i>Edit Blog</h5>
+                    </a>
+                </div>
+                <div class="editdelete">
+                    <a href="{% url 'delete' blog.pk %}">                    
+                        <h5><i class="fas fa-trash"></i>Delete Blog</h5>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock detailview %}
+
+

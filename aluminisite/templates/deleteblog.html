@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block deleteblog %}
+{% if user.is_authenticated %}
+<div class="blog_content_main_div">
+    <div class="blog_subdiv newblogform ">
+        <h3 class="deletewarning">Are you sure want to delete the post? <br/>If deleted you are not able to recover it back.</h3>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="submit" class="submit_btn" value="Yes, I need to delete">
+        </form>
+    </div>
+</div>
+{% else %}
+<div class="blog_content_main_div">
+    <div class="blog_subdiv newblogform ">
+        <h3 class="deletewarning">
+            <a href="{% url 'login' %}">Log in</a> to delete blog.
+        </h3>
+    </div>
+</div>
+{% endif %}
+{% endblock deleteblog %}
+

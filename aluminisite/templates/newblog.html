@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block newblog %}
+{% if user.is_authenticated %}
+<div class="blog_content_main_div">
+    <div class="blog_subdiv newblogform ">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="submit_btn" value="Post">
+        </form>
+    </div>
+</div>
+{% else %}
+<div class="blog_content_main_div">
+    <div class="blog_subdiv newblogform ">
+        <h3 class="deletewarning">
+            <a href="{% url 'login' %}">Log in</a> to create a new blog.
+        </h3>
+    </div>
+</div>
+{% endif %}
+{% endblock newblog %}
+
+
+
+
